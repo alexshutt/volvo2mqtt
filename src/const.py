@@ -1,6 +1,6 @@
 from config import settings
 
-VERSION = "v1.9.14"
+VERSION = "v1.9.15"
 
 OAUTH_TOKEN_URL = "https://volvoid.eu.volvocars.com/as/token.oauth2"
 OAUTH_AUTH_URL = "https://volvoid.eu.volvocars.com/as/authorization.oauth2"
@@ -116,7 +116,7 @@ supported_entities = [
                         {"name": "Tank Lid", "domain": "binary_sensor", "device_class": "door", "id": "tank_lid", "icon": "car-door-lock", "url": LOCK_STATE_URL},
                         {"name": "Sunroof", "domain": "binary_sensor", "device_class": "door", "id": "sunroof", "icon": "car-door-lock", "url": WINDOWS_STATE_URL},
                         {"name": "Air Conditioning", "domain": "switch", "id": "climate_status", "icon": "air-conditioner"},
-                        {"name": "Flash Lights", "domain": "switch", "id": "flash_lights", "icon": "car-light-high", "url": "FLASH_LIGHTS_URL"},
+                        {"name": "Flash Lights", "domain": "switch", "id": "flash_lights", "icon": "car-light-high", "url": FLASH_LIGHTS_URL},
                         {"name": "Lock state", "domain": "lock", "id": "lock_status", "icon": "lock", "url": LOCK_STATE_URL},
                         {"name": "Force Update Data", "domain": "button", "id": "update_data", "icon": "update", "url": ""},
                         {"name": "Location", "domain": "device_tracker", "id": "location", "icon": "map-marker-radius", "url": LOCATION_STATE_URL},
