@@ -1,6 +1,6 @@
 from config import settings
 
-VERSION = "v1.9.11"
+VERSION = "v1.9.13"
 
 OAUTH_TOKEN_URL = "https://volvoid.eu.volvocars.com/as/token.oauth2"
 OAUTH_AUTH_URL = "https://volvoid.eu.volvocars.com/as/authorization.oauth2"
@@ -123,7 +123,7 @@ supported_entities = [
                         {"name": "Tire Rear Left", "domain": "sensor", "id": "tyre_rear_left", "icon": "car-tire-alert", "url": TYRE_STATE_URL},
                         {"name": "Tire Rear Right", "domain": "sensor", "id": "tyre_rear_right", "icon": "car-tire-alert", "url": TYRE_STATE_URL},
                         {"name": "Engine State", "domain": "binary_sensor", "device_class": "running", "id": "engine_state", "icon": "engine", "url": ENGINE_STATE_URL},
-                        {"name": "Oil Level", "domain": "sensor", "device_class": "warning", "id": "oil_level", "icon": "engine", "url": ENGINE_DIAGNOSTICS_URL},
+                        {"name": "Oil Level", "domain": "sensor", "id": "oil_level", "icon": "engine", "url": ENGINE_DIAGNOSTICS_URL},
                         {"name": "Fuel Level", "domain": "sensor", "id": "fuel_level", "unit": VOLUME_LITERS, "icon": "fuel", "url": FUEL_BATTERY_STATE_URL, "state_class": "measurement"},
                         {"name": "Average Fuel Consumption", "domain": "sensor", "id": "average_fuel_consumption", "unit": VOLUME_LITERS, "icon": "fuel", "url": STATISTICS_URL},
                         {"name": "Average Energy Consumption", "domain": "sensor", "id": "average_energy_consumption", "unit": ENERGY_KILO_WATT_HOUR, "icon": "car-electric", "url": STATISTICS_URL},
