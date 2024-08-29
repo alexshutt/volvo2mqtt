@@ -636,6 +636,8 @@ def parse_api_data(data, sensor_id=None):
         return data["rearRight"]["value"] if util.keys_exists(data, "rearRight") else None
     elif sensor_id == "oil_level":
         return data["oilLevelWarning"]["value"] if util.keys_exists(data, "oilLevelWarning") else None
+    elif sensor_id == "coolant_level":
+        return data["engineCoolantLevelWarning"]["value"] if util.keys_exists(data, "engineCoolantLevelWarning") else None
     elif sensor_id == "engine_state":
         return engine_states[data["engineStatus"]["value"]] if util.keys_exists(data, "engineStatus") else None
     elif sensor_id == "fuel_level":

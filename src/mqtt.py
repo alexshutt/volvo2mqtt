@@ -10,7 +10,7 @@ from threading import Thread, Timer
 from datetime import datetime
 from babel.dates import format_datetime
 from config import settings
-from const import CLIMATE_START_URL, CLIMATE_STOP_URL, CAR_LOCK_URL, \
+from const import CLIMATE_START_URL, CLIMATE_STOP_URL, CAR_LOCK_URL, FLASH_LIGHTS_URL, \
     CAR_UNLOCK_URL, availability_topic, icon_states, old_entity_ids, otp_mqtt_topic
 
 mqtt_client: mqtt.Client
@@ -179,6 +179,8 @@ def on_message(client, userdata, msg):
             lock_car(vin)
         elif payload == "UNLOCK":
             unlock_car(vin)
+    elif "flash_lights" in msg.topic:
+        flash_lights(vin)
     elif "update_data" in msg.topic:
         if payload == "PRESS":
             update_car_data(True)
@@ -242,6 +244,14 @@ def lock_car(vin):
     # Fetch API lock state until locking finished
     Thread(target=volvo.check_lock_status, args=(vin, "UNLOCKED")).start()
 
+def flash_lights(vin):
+    # Start the api call in another thread for HA performance
+    Thread(target=volvo.api_call, args=(FLASH_LIGHTS_URL, "POST", vin)).start()
+
+    # # Force set locking state
+    # update_car_data(False, {"entity_id": "lock_status", "vin": vin, "state": "LOCKING"})
+    # # Fetch API lock state until locking finished
+    # Thread(target=volvo.check_lock_status, args=(vin, "UNLOCKED")).start()
 
 def stop_climate(vin):
     global assumed_climate_state, climate_timer, engine_status

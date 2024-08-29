@@ -23,6 +23,7 @@ ENGINE_DIAGNOSTICS_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicle
 VEHICLE_DIAGNOSTICS_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/diagnostics"
 WARNINGS_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/warnings"
 BRAKES_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/brakes"
+FLASH_LIGHTS_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/commands/flash"
 API_BACKEND_STATUS = "https://public-developer-portal-bff.weu-prod.ecpaz.volvocars.biz/api/v1/backend-status"
 
 LENGTH_KILOMETERS = "km"
@@ -123,7 +124,8 @@ supported_entities = [
                         {"name": "Tire Rear Left", "domain": "sensor", "id": "tyre_rear_left", "icon": "car-tire-alert", "url": TYRE_STATE_URL},
                         {"name": "Tire Rear Right", "domain": "sensor", "id": "tyre_rear_right", "icon": "car-tire-alert", "url": TYRE_STATE_URL},
                         {"name": "Engine State", "domain": "binary_sensor", "device_class": "running", "id": "engine_state", "icon": "engine", "url": ENGINE_STATE_URL},
-                        {"name": "Oil Level", "domain": "sensor", "id": "oil_level", "icon": "engine", "url": ENGINE_DIAGNOSTICS_URL},
+                        {"name": "Oil Level", "domain": "sensor", "id": "oil_level", "icon": "oil-level", "url": ENGINE_DIAGNOSTICS_URL},
+                        {"name": "Coolant Level", "domain": "sensor", "id": "coolant_level", "icon": "coolant-level", "url": ENGINE_DIAGNOSTICS_URL},
                         {"name": "Fuel Level", "domain": "sensor", "id": "fuel_level", "unit": VOLUME_LITERS, "icon": "fuel", "url": FUEL_BATTERY_STATE_URL, "state_class": "measurement"},
                         {"name": "Average Fuel Consumption", "domain": "sensor", "id": "average_fuel_consumption", "unit": VOLUME_LITERS, "icon": "fuel", "url": STATISTICS_URL},
                         {"name": "Average Energy Consumption", "domain": "sensor", "id": "average_energy_consumption", "unit": ENERGY_KILO_WATT_HOUR, "icon": "car-electric", "url": STATISTICS_URL},
@@ -134,11 +136,11 @@ supported_entities = [
                         {"name": "Distance to Service", "domain": "sensor", "id": "km_to_service", "unit": LENGTH_KILOMETERS if not units.get(settings["babelLocale"]) else units[settings["babelLocale"]]["distance_to_service"]["unit"], "icon": "wrench-clock", "url": VEHICLE_DIAGNOSTICS_URL},
                         {"name": "Time to Service", "domain": "sensor", "id": "time_to_service", "icon": "wrench-clock", "url": VEHICLE_DIAGNOSTICS_URL},
                         {"name": "Service warning status", "domain": "sensor", "id": "service_warning_status", "icon": "alert-outline", "url": VEHICLE_DIAGNOSTICS_URL},
-                        {"name": "Washer Fluid Level warning", "domain": "sensor", "id": "washer_fluid_warning", "icon": "alert-outline", "url": VEHICLE_DIAGNOSTICS_URL},
+                        {"name": "Washer Fluid Level warning", "domain": "sensor", "id": "washer_fluid_warning", "icon": "washer-fluid-level", "url": VEHICLE_DIAGNOSTICS_URL},
                         {"name": "API Backend status", "domain": "sensor", "id": "api_backend_status", "icon": "alert"},
                         {"name": "Update Interval", "domain": "number", "id": "update_interval", "unit": "seconds", "icon": "timer", "min": -1, "max": 600, "mode": "box"},
                         {"name": "Warnings", "domain": "sensor", "id": "warnings", "icon": "alert", "url": WARNINGS_URL},
-                        {"name": "Brakes", "domain": "sensor", "id": "brakes", "icon": "alert", "url": BRAKES_URL}
+                        {"name": "Brakes", "domain": "sensor", "id": "brakes", "icon": "brake-fluid-level", "url": BRAKES_URL}
 ]
 
 old_entity_ids = ["months_to_service", "service_warning_trigger", "distance_to_empty"]
