@@ -668,6 +668,9 @@ def parse_api_data(data, sensor_id=None):
                         divider = 1
                 return util.convert_metric_values(average_speed / divider)
         return None
+    elif sensor_id == "engine_diag":
+        if util.keys_exists(data, "oilLevelWarning"):
+            return data["oilLevelWarning"]["value"]
     elif sensor_id == "location":
         coordinates = {}
         if util.keys_exists(data, "geometry"):

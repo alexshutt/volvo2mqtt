@@ -123,7 +123,9 @@ supported_entities = [
                         {"name": "Tire Rear Left", "domain": "sensor", "id": "tyre_rear_left", "icon": "car-tire-alert", "url": TYRE_STATE_URL},
                         {"name": "Tire Rear Right", "domain": "sensor", "id": "tyre_rear_right", "icon": "car-tire-alert", "url": TYRE_STATE_URL},
                         {"name": "Engine State", "domain": "binary_sensor", "device_class": "running", "id": "engine_state", "icon": "engine", "url": ENGINE_STATE_URL},
-                        {"name": "Fuel Level", "domain": "sensor", "id": "fuel_level", "unit": VOLUME_LITERS, "icon": "fuel", "url": FUEL_BATTERY_STATE_URL, "state_class": "measurement"},
+                        {"name": "Oil Level", "domain": "sensor", "device_class": "warning", "id": "oil_level", "icon": "engine", "url": ENGINE_DIAGNOSTICS_URL},
+
+    {"name": "Fuel Level", "domain": "sensor", "id": "fuel_level", "unit": VOLUME_LITERS, "icon": "fuel", "url": FUEL_BATTERY_STATE_URL, "state_class": "measurement"},
                         {"name": "Average Fuel Consumption", "domain": "sensor", "id": "average_fuel_consumption", "unit": VOLUME_LITERS, "icon": "fuel", "url": STATISTICS_URL},
                         {"name": "Average Energy Consumption", "domain": "sensor", "id": "average_energy_consumption", "unit": ENERGY_KILO_WATT_HOUR, "icon": "car-electric", "url": STATISTICS_URL},
                         {"name": "Distance to Empty Tank", "domain": "sensor", "id": "distance_to_empty_tank", "unit": LENGTH_KILOMETERS if not units.get(settings["babelLocale"]) else units[settings["babelLocale"]]["distance_to_empty"]["unit"], "icon": "map-marker-distance", "url": STATISTICS_URL, "state_class": "measurement"},
