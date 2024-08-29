@@ -359,6 +359,10 @@ def check_supported_endpoints():
                 # If battery charge level could be found in recharge-api, skip the second battery charge sensor
                 continue
 
+            if entity["id"] == "flash_lights":
+                supported_endpoints[vin].append(entity)
+                continue
+
             if entity.get('url'):
                 state = api_call(entity["url"], "GET", vin, entity["id"])
             else:

@@ -248,6 +248,7 @@ def flash_lights(vin):
     # Start the api call in another thread for HA performance
     Thread(target=volvo.api_call, args=(FLASH_LIGHTS_URL, "POST", vin)).start()
 
+    update_car_data()
     # # Force set locking state
     # update_car_data(False, {"entity_id": "lock_status", "vin": vin, "state": "LOCKING"})
     # # Fetch API lock state until locking finished
