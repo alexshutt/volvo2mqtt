@@ -1,9 +1,9 @@
 name: "Volvo2Mqtt"
 description: "Volvo AAOS MQTT bridge"
-version: "1.9.6"
+version: "1.9.7"
 slug: "volvo2mqtt"
 init: false
-url: "https://github.com/Dielee/volvo2mqtt"
+url: "https://github.com/alexshutt/volvo2mqtt"
 apparmor: true
 codenotary: notary@home-assistant.io
 services:
@@ -11,9 +11,9 @@ services:
 map: 
   - addons:rw
 options:
-  updateInterval: 300
+  updateInterval: 600
   babelLocale: null
-  TZ: null
+  TZ: Europe/London
   debug: false
   disable_logging: false
   mqtt:
