@@ -634,6 +634,8 @@ def parse_api_data(data, sensor_id=None):
         return data["rearLeft"]["value"] if util.keys_exists(data, "rearLeft") else None
     elif sensor_id == "tyre_rear_right":
         return data["rearRight"]["value"] if util.keys_exists(data, "rearRight") else None
+    elif sensor_id == "oil_level":
+        return data["oilLevelWarning"]["value"] if util.keys_exists(data, "oilLevelWarning") else None
     elif sensor_id == "engine_state":
         return engine_states[data["engineStatus"]["value"]] if util.keys_exists(data, "engineStatus") else None
     elif sensor_id == "fuel_level":
@@ -668,9 +670,6 @@ def parse_api_data(data, sensor_id=None):
                         divider = 1
                 return util.convert_metric_values(average_speed / divider)
         return None
-    elif sensor_id == "oil_level":
-        if util.keys_exists(data, "oilLevelWarning"):
-            return data["oilLevelWarning"]["value"]
     elif sensor_id == "location":
         coordinates = {}
         if util.keys_exists(data, "geometry"):
