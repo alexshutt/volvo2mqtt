@@ -22,6 +22,7 @@ STATISTICS_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/st
 ENGINE_DIAGNOSTICS_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/engine"
 VEHICLE_DIAGNOSTICS_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/diagnostics"
 WARNINGS_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/warnings"
+BRAKES_URL = "https://api.volvocars.com/connected-vehicle/v2/vehicles/{0}/brakes"
 API_BACKEND_STATUS = "https://public-developer-portal-bff.weu-prod.ecpaz.volvocars.biz/api/v1/backend-status"
 
 LENGTH_KILOMETERS = "km"
@@ -135,7 +136,8 @@ supported_entities = [
                         {"name": "Washer Fluid Level warning", "domain": "sensor", "id": "washer_fluid_warning", "icon": "alert-outline", "url": VEHICLE_DIAGNOSTICS_URL},
                         {"name": "API Backend status", "domain": "sensor", "id": "api_backend_status", "icon": "alert"},
                         {"name": "Update Interval", "domain": "number", "id": "update_interval", "unit": "seconds", "icon": "timer", "min": -1, "max": 600, "mode": "box"},
-                        {"name": "Warnings", "domain": "sensor", "id": "warnings", "icon": "alert", "url": WARNINGS_URL}
+                        {"name": "Warnings", "domain": "sensor", "id": "warnings", "icon": "alert", "url": WARNINGS_URL},
+                        {"name": "Brakes", "domain": "sensor", "id": "brakes", "icon": "alert", "url": BRAKES_URL}
 ]
 
 old_entity_ids = ["months_to_service", "service_warning_trigger", "distance_to_empty"]

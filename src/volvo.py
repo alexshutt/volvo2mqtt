@@ -14,7 +14,7 @@ from json import JSONDecodeError
 from const import charging_system_states, charging_connection_states, door_states, window_states, \
     OAUTH_AUTH_URL, OAUTH_TOKEN_URL, VEHICLES_URL, VEHICLE_DETAILS_URL, RECHARGE_STATE_URL, CLIMATE_START_URL, \
     WINDOWS_STATE_URL, LOCK_STATE_URL, TYRE_STATE_URL, supported_entities, FUEL_BATTERY_STATE_URL, \
-    STATISTICS_URL, ENGINE_DIAGNOSTICS_URL, VEHICLE_DIAGNOSTICS_URL, API_BACKEND_STATUS, WARNINGS_URL, engine_states, \
+    STATISTICS_URL, ENGINE_DIAGNOSTICS_URL, VEHICLE_DIAGNOSTICS_URL, API_BACKEND_STATUS, WARNINGS_URL, BRAKES_URL, engine_states, \
     otp_max_loops
 
 session = requests.Session()
