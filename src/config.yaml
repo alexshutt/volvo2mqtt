@@ -1,6 +1,6 @@
 name: "Volvo2Mqtt"
 description: "Volvo AAOS MQTT bridge"
-version: "1.9.7"
+version: "1.9.8"
 slug: "volvo2mqtt"
 init: false
 url: "https://github.com/alexshutt/volvo2mqtt"
@@ -12,7 +12,7 @@ map:
   - addons:rw
 options:
   updateInterval: 600
-  babelLocale: null
+  babelLocale: en_GB
   TZ: Europe/London
   debug: false
   disable_logging: false
