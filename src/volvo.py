@@ -708,6 +708,8 @@ def parse_api_data(data, sensor_id=None):
         return data["averageEnergyConsumption"]["value"] if util.keys_exists(data, "averageEnergyConsumption") else None
     elif sensor_id == "washer_fluid_warning":
         return data["washerFluidLevelWarning"]["value"] if util.keys_exists(data, "washerFluidLevelWarning") else None
+    elif sensor_id == "brakes":
+        return data["brakeFluidLevelWarning"]["value"] if util.keys_exists(data, "brakeFluidLevelWarning") else None
     elif sensor_id == "warnings":
         warnings = 0
         cleaned_data = {}
