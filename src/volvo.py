@@ -719,6 +719,7 @@ def parse_api_data(data, sensor_id=None):
     elif sensor_id == "brakes":
         return data["brakeFluidLevelWarning"]["value"] if util.keys_exists(data, "brakeFluidLevelWarning") else None
     elif sensor_id == "warnings":
+        logging.info("warnings raw output: " + data)
         warnings = 0
         cleaned_data = {}
         for key, dicts in data.items():
